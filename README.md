@@ -88,6 +88,27 @@ All endpoints below require a valid Bearer token in the `Authorization` header.
 }
 ```
 
+### Kafka Integration
+
+Kafka is used to publish customer.created events asynchronously after a customer is saved.
+
+Topic: customer.created
+
+Producer: Publishes event from customer service
+
+Consumer (optional): Reacts to event (e.g., sends email, logs audit, etc.)
+
+Sample Code:
+
+```
+@Autowired
+private KafkaTemplate<String, String> kafkaTemplate;
+
+public void publishCustomerCreatedEvent(Customer customer) {
+    String json = new Gson().toJson(customer);
+    kafkaTemplate.send("customer.created", json);
+}
+```
 ### Sample Login Credentials
 {
   "username": "test",
