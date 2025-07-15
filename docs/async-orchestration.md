@@ -26,9 +26,9 @@ Asynchronous orchestration is a pattern where the main orchestration flow trigge
 We can implement async orchestration using:
 
 1. Spring Events (Simple In-App Async)
-   ```java
+   ```
    @Component
-public class CustomerEventPublisher {
+     public class CustomerEventPublisher {
     @Autowired private ApplicationEventPublisher publisher;
 
     public void publish(Customer customer) {
@@ -50,6 +50,7 @@ public class CustomerCreatedEvent extends ApplicationEvent {
 public void handleCustomerCreated(CustomerCreatedEvent event) {
     // e.g., Send welcome email, notify analytics, etc.
 }```
+
 ***2. Message Queue with Kafka (Distributed Async)***
 
 You can produce customer creation events to a Kafka topic and consume them asynchronously via a separate microservice or background job.
@@ -59,7 +60,7 @@ You can produce customer creation events to a Kafka topic and consume them async
 
 ⸻
 
-🔁 BPMN + Async Tasks (Advanced Option)
+***🔁 BPMN + Async Tasks (Advanced Option)***
 
 With tools like Camunda or Flowable, you can define orchestration flows with async task markers (asyncBefore, asyncAfter) and error handling.
 
@@ -70,7 +71,7 @@ Best for:
 
 ⸻
 
-🧪 Sample Use Case
+***🧪 Sample Use Case***
 POST /api/customers
 
 Triggers:
