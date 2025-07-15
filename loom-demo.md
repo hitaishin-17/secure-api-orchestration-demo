@@ -1,1 +1,0 @@
-Optional: link to a walkthrough video
