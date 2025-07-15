@@ -18,14 +18,15 @@ This document defines the API contracts used in the Secure API Orchestration Dem
   "password": "test123"
 }
 
-**Response:**
+Response:
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR..."
 }
+```
 Notes:
 Use the returned token in the Authorization header for all secured endpoints:
 Authorization: Bearer <token>
-```
+
 ***👤 Customers***
 
 All endpoints below require a valid Bearer token.
