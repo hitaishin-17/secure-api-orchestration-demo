@@ -26,7 +26,6 @@ Asynchronous orchestration is a pattern where the main orchestration flow trigge
 We can implement async orchestration using:
 
  1. Spring Events (Simple In-App Async)
-   ```
    @Component
      public class CustomerEventPublisher {
     @Autowired private ApplicationEventPublisher publisher;
@@ -49,7 +48,7 @@ public class CustomerCreatedEvent extends ApplicationEvent {
 @EventListener
 public void handleCustomerCreated(CustomerCreatedEvent event) {
     // e.g., Send welcome email, notify analytics, etc.
-}```
+}
 
 ### 2. Message Queue with Kafka (Distributed Async)
 
