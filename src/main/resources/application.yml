@@ -1,3 +1,12 @@
 spring:
   application:
     name: orchestration-demo
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+
+server:
+  port: 8080
+
+jwt:
+  secret: zW8i1Gf5ROmzXr8vVl8PjD6oHeIapqlMZc6vOmAplFg=

@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": "1",
+    "name": "Alice Verma",
+    "email": "alice.verma@example.com",
+    "phone": "+919876543210",
+    "status": "NEW"
+  },
+  {
+    "id": "2",
+    "name": "Rahul Mehta",
+    "email": "rahul.mehta@example.com",
+    "phone": "+919812345678",
+    "status": "ONBOARDED"
+  },
+  {
+    "id": "3",
+    "name": "Sneha Kapoor",
+    "email": "sneha.kapoor@example.com",
+    "phone": "+919900112233",
+    "status": "PENDING_VERIFICATION"
+  }
+]
