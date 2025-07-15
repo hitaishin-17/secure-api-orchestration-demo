@@ -4,7 +4,7 @@ This document outlines how asynchronous orchestration can be introduced in the S
 
 ---
 
-*** What is Async Orchestration?***
+### What is Async Orchestration?
 
 Asynchronous orchestration is a pattern where the main orchestration flow triggers tasks that run independently, allowing the system to:
 
@@ -25,7 +25,7 @@ Asynchronous orchestration is a pattern where the main orchestration flow trigge
 
 We can implement async orchestration using:
 
-### 1. Spring Events (Simple In-App Async)
+*** 1. Spring Events (Simple In-App Async)***
    ```
    @Component
      public class CustomerEventPublisher {
