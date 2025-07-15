@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
                   xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
                   xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
                   id="Definitions_1"
-                  targetNamespace="http://bpmn.io/schema/bpmn">
-  <bpmn:process id="OnboardingProcess" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1" name="Start Onboarding"/>
-    <bpmn:task id="Task_VerifyDocuments" name="Verify Documents"/>
-    <bpmn:task id="Task_CreateAccount" name="Create Account"/>
-    <bpmn:endEvent id="EndEvent_1" name="Onboarding Complete"/>
-    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_VerifyDocuments"/>
-    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_VerifyDocuments" targetRef="Task_CreateAccount"/>
-    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_CreateAccount" targetRef="EndEvent_1"/>
+                  targetNamespace="http://example.com/onboarding">
+
+  <bpmn:process id="customerOnboardingProcess" name="Customer Onboarding" isExecutable="true">
+    
+    <bpmn:startEvent id="StartEvent_1" name="Customer Created">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_StoreCRM"/>
+
+    <bpmn:serviceTask id="Task_StoreCRM" name="Store in CRM" camunda:type="external" camunda:topic="store-crm">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_StoreCRM" targetRef="Task_SendEmail"/>
+
+    <bpmn:serviceTask id="Task_SendEmail" name="Send Welcome Email" camunda:type="external" camunda:topic="send-welcome-email">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:serviceTask>
+
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_SendEmail" targetRef="EndEvent_1"/>
+
+    <bpmn:endEvent id="EndEvent_1" name="Onboarding Complete">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+    </bpmn:endEvent>
+
   </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_CustomerOnboarding">
+    <bpmndi:BPMNPlane id="BPMNPlane_CustomerOnboarding" bpmnElement="customerOnboardingProcess">
+      <!-- Visual elements like shapes and edges can be added here if needed -->
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
 </bpmn:definitions>
