@@ -1,30 +1,30 @@
-###JWT Authentication in Secure API Orchestration Demo###
+# JWT Authentication in Secure API Orchestration Demo
 
 This document describes how JWT (JSON Web Token) authentication is implemented in the Secure API Orchestration Demo.
 
 ⸻
 
-🔐 What is JWT?
+## 🔐 What is JWT?
 
 JWT is a stateless, compact, and URL-safe token format used for securely transmitting information between parties. It’s signed using a secret or public/private key pair to ensure data integrity and authenticity.
 
 ⸻
 
-🧱 Core Concepts
+## Core Concepts
 	•	Token Structure: JWT = Header + Payload + Signature
 	•	Bearer Token: Sent in the Authorization header
 	•	Stateless Auth: No need to store sessions on the server
 
 ⸻
 
-🛠️ Implementation Details
+## Implementation Details
 
-1. Login Endpoint
+**1. Login Endpoint**
 	•	URL: POST /auth/login
 	•	Request: { "username": "test", "password": "test123" }
 	•	Response: { "token": "<JWT token>" }
 
-2. JWT Token Generation
+**2. JWT Token Generation**
 	•	Uses io.jsonwebtoken.Jwts
 	•	Encodes username as subject
 	•	Sets issued time and expiry (e.g., 1 hour)
@@ -40,13 +40,13 @@ public String generateToken(String username) {
 }
 ```
 
-3. JWT Validation
+**3. JWT Validation**
 	•	Token is parsed and validated for:
 	•	Signature
 	•	Expiry
 	•	Matching username from UserDetails
 
-4. JWT Filter
+**4. JWT Filter**
 	•	Intercepts all incoming requests
 	•	Extracts token from header
 	•	Validates and sets security context
@@ -69,7 +69,7 @@ if (username != null && SecurityContextHolder.getContext().getAuthentication() =
 
 ⸻
 
-🔄 How to Use in Postman
+## How to Use in Postman
 	1.	Call POST /auth/login with valid credentials
 	2.	Copy the token from the response
 	3.	Add header to any protected API call:
@@ -78,13 +78,13 @@ Authorization: Bearer <token>
 
 ⸻
 
-🧪 Test Users
+## Test Users
 	•	Username: test
 	•	Password: test123
 
 ⸻
 
-🔒 Security Tips
+## Security Tips
 	•	Keep secret key secure (e.g., env vars)
 	•	Use HTTPS to protect token in transit
 	•	Set appropriate token expiration
@@ -92,7 +92,7 @@ Authorization: Bearer <token>
 
 ⸻
 
-📚 Libraries Used
+## Libraries Used
 	•	Spring Security
 	•	jjwt (Java JWT)
 
