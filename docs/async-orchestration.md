@@ -51,44 +51,46 @@ public void handleCustomerCreated(CustomerCreatedEvent event) {
     // e.g., Send welcome email, notify analytics, etc.
 }```
 
-***2. Message Queue with Kafka (Distributed Async)***
+### 2. Message Queue with Kafka (Distributed Async)
 
 You can produce customer creation events to a Kafka topic and consume them asynchronously via a separate microservice or background job.
-	•	Topic: customer.created
-	•	Producer: sends event post-creation
-	•	Consumer: triggers downstream logic (e.g., notify CRM, log audit)
 
-⸻
+- **Topic**: `customer.created`  
+- **Producer**: Sends event post-creation  
+- **Consumer**: Triggers downstream logic (e.g., notify CRM, log audit)  
 
-***🔁 BPMN + Async Tasks (Advanced Option)***
+---
 
-With tools like Camunda or Flowable, you can define orchestration flows with async task markers (asyncBefore, asyncAfter) and error handling.
+### 🔁 BPMN + Async Tasks (Advanced Option)
 
-Best for:
-	•	Long-running transactions
-	•	Retry and compensation logic
-	•	Visual process modeling
+With tools like **Camunda** or **Flowable**, you can define orchestration flows with async task markers (`asyncBefore`, `asyncAfter`) and error handling.
 
-⸻
+**Best for:**
 
-***🧪 Sample Use Case***
-POST /api/customers
+- Long-running transactions  
+- Retry and compensation logic  
+- Visual process modeling  
 
-Triggers:
-	1.	Save to MongoDB (sync)
-	2.	Publish event to Kafka or internal Spring Event (async)
-	3.	Downstream services react:
-	•	CRM updated
-	•	Welcome email sent
-	•	Audit log stored
+---
 
-⸻
+### 🧪 Sample Use Case: `POST /api/customers`
 
-***🔒 Security Considerations***
-	•	Sign or validate events to prevent tampering
-	•	Use JWT or API keys for internal service auth
-	•	Apply rate limiting to event consumers
+**Triggers:**
 
+1. Save to MongoDB (sync)  
+2. Publish event to Kafka or internal Spring Event (async)  
+3. Downstream services react:
+   - CRM updated  
+   - Welcome email sent  
+   - Audit log stored  
+
+---
+
+### 🔒 Security Considerations
+
+- Sign or validate events to prevent tampering  
+- Use JWT or API keys for internal service auth  
+- Apply rate limiting to event consumers  
 ⸻
 
 ***🧰 Tools & Libraries***
