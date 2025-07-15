@@ -1,4 +1,4 @@
-JWT Authentication in Secure API Orchestration Demo
+###JWT Authentication in Secure API Orchestration Demo###
 
 This document describes how JWT (JSON Web Token) authentication is implemented in the Secure API Orchestration Demo.
 
@@ -29,6 +29,7 @@ JWT is a stateless, compact, and URL-safe token format used for securely transmi
 	•	Encodes username as subject
 	•	Sets issued time and expiry (e.g., 1 hour)
 
+```java
 public String generateToken(String username) {
     return Jwts.builder()
             .setSubject(username)
@@ -37,6 +38,7 @@ public String generateToken(String username) {
             .signWith(Keys.hmacShaKeyFor(secretKey.getBytes()), SignatureAlgorithm.HS256)
             .compact();
 }
+```
 
 3. JWT Validation
 	•	Token is parsed and validated for:
@@ -49,6 +51,7 @@ public String generateToken(String username) {
 	•	Extracts token from header
 	•	Validates and sets security context
 
+```java
 String token = extractToken(request);
 String username = jwtUtil.extractUsername(token);
 
@@ -61,6 +64,7 @@ if (username != null && SecurityContextHolder.getContext().getAuthentication() =
         SecurityContextHolder.getContext().setAuthentication(authToken);
     }
 }
+```
 
 
 ⸻
@@ -71,7 +75,6 @@ if (username != null && SecurityContextHolder.getContext().getAuthentication() =
 	3.	Add header to any protected API call:
 
 Authorization: Bearer <token>
-
 
 ⸻
 
