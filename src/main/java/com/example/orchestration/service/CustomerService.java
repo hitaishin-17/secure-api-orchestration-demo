@@ -1,5 +1,6 @@
 package com.example.orchestration.service;
 
+import com.example.orchestration.kafka.KafkaCustomerProducer;
 import com.example.orchestration.model.Customer;
 import com.example.orchestration.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,10 @@ public class CustomerService {
     }
 
     public Customer createCustomer(Customer customer) {
-        return customerRepository.save(customer);
+        Customer saved = customerRepository.save(customer);
+        KafkaCustomerProducer kafkaCustomerProducer = new KafkaCustomerProducer();
+        kafkaCustomerProducer.sendCustomerCreated(saved);
+        return saved;
     }
 
     public Customer saveCustomer(Customer customer) {
