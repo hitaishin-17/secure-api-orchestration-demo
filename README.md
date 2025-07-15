@@ -86,6 +86,7 @@ All endpoints below require a valid Bearer token in the `Authorization` header.
   "phone": "9876543210",
   "status": "ACTIVE"
 }
+```
 
 ### Sample Login Credentials
 {
@@ -96,32 +97,28 @@ All endpoints below require a valid Bearer token in the `Authorization` header.
 ### Swagger UI
 http://localhost:8080/swagger-ui/index.html
 
-Docker (Optional)
+### Docker (Optional)
 
 If Docker is installed:
 docker-compose up
 
 Ensure docker and docker-compose are installed and MongoDB container runs successfully.
 
-Postman Collection
+### Postman Collection
 
 A ready-to-import Postman collection is available in the repo:
 secure-api-orchestration-demo.postman_collection.json
 
 ⸻
 
-🤝 Contributing
+### Contributing
 
 Feel free to fork, suggest improvements, or raise issues.
 
 ⸻
 
-🧑‍💻 Author
+### Author
 
 Hitaishi N
 
-⸻
 
-📄 License
-
-This project is licensed under the MIT License.
