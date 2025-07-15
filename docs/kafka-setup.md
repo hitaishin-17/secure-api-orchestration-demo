@@ -1,10 +1,10 @@
-Kafka Setup for Secure API Orchestration Demo
+### Kafka Setup for Secure API Orchestration Demo
 
 This guide outlines how to integrate Apache Kafka into the Secure API Orchestration Demo for distributed asynchronous processing.
 
 ⸻
 
-🧩 Why Kafka?
+## Why Kafka?
 
 Kafka enables event-driven architecture by decoupling producers and consumers. It allows background jobs and external systems to react to application events (e.g., customer creation).
 
@@ -16,7 +16,7 @@ Use cases:
 
 ⸻
 
-🔧 Prerequisites
+## Prerequisites
 	•	Apache Kafka and Zookeeper running on localhost
 	•	Spring Boot project already set up
 	•	spring-kafka dependency in pom.xml
@@ -29,7 +29,7 @@ Use cases:
 
 ⸻
 
-⚙️ Spring Boot Kafka Config (application.yml)
+## Spring Boot Kafka Config (application.yml)
 
 spring:
   kafka:
@@ -45,7 +45,7 @@ spring:
 
 ⸻
 
-🚀 Kafka Producer Example
+## Kafka Producer Example
 
 @Component
 public class KafkaProducer {
@@ -60,7 +60,7 @@ public class KafkaProducer {
 
 ⸻
 
-🎧 Kafka Consumer Example
+## Kafka Consumer Example
 
 @Component
 public class KafkaConsumer {
@@ -74,13 +74,13 @@ public class KafkaConsumer {
 
 ⸻
 
-🧪 Testing
+## Testing
 	•	Use Postman to POST a new customer
 	•	Ensure the Kafka consumer prints the event
 
 ⸻
 
-📌 Notes
+## Notes
 	•	Use JSON serialization for messages (e.g., new Gson().toJson(customer))
 	•	Consider using a dedicated DTO class and Jackson for structured messages
 	•	Secure Kafka with SSL in production
