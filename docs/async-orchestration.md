@@ -1,10 +1,10 @@
-Async Orchestration in Secure API Orchestration Demo
+###Async Orchestration in Secure API Orchestration Demo###
 
 This document outlines how asynchronous orchestration can be introduced in the Secure API Orchestration Demo to improve performance, scalability, and user experience — especially in multi-service, event-driven scenarios.
 
 ⸻
 
-What is Async Orchestration?
+***What is Async Orchestration?***
 
 Asynchronous orchestration is a pattern where the main orchestration flow triggers tasks that run independently, allowing the system to:
 	•	Avoid blocking calls
@@ -22,7 +22,7 @@ Benefits of Async Orchestration
 
 ⸻
 
-🔄 Implementation Strategy
+***🔄 Implementation Strategy***
 
 We can implement async orchestration using:
 
@@ -51,7 +51,7 @@ public class CustomerCreatedEvent extends ApplicationEvent {
 public void handleCustomerCreated(CustomerCreatedEvent event) {
     // e.g., Send welcome email, notify analytics, etc.
 }
-```
+  ```
 2. Message Queue with Kafka (Distributed Async)
 
 You can produce customer creation events to a Kafka topic and consume them asynchronously via a separate microservice or background job.
@@ -85,14 +85,14 @@ Triggers:
 
 ⸻
 
-🔒 Security Considerations
+***🔒 Security Considerations***
 	•	Sign or validate events to prevent tampering
 	•	Use JWT or API keys for internal service auth
 	•	Apply rate limiting to event consumers
 
 ⸻
 
-🧰 Tools & Libraries
+***🧰 Tools & Libraries***
 | **Purpose**        | **Tool**              |
 |--------------------|-----------------------|
 | Event handling     | Spring Events         |
@@ -100,7 +100,7 @@ Triggers:
 | Workflow engine    | Camunda, Flowable     |
 | Async support      | `@Async`, `Executor`  |
 
-Final Thoughts
+***Final Thoughts***
 
 Even in a simple CRUD API, async orchestration improves:
 	•	Separation of concerns
