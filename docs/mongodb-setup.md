@@ -64,8 +64,8 @@ mongodb://localhost:27017
 ⸻
 
 ## Database Details for This Project
-	•	Database: secureapi
-	•	Collections:
+Database: secureapi
+Collections:
 	  •	customers
 	  •	users
 
