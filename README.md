@@ -137,9 +137,16 @@ secure-api-orchestration-demo.postman_collection.json
 Feel free to fork, suggest improvements, or raise issues.
 
 ⸻
+### About me
+Hi, I’m Hitaishi N, a backend engineer turned product-minded builder with experience in:
+- Designing secure, scalable APIs using Spring Boot & JWT
+- Integrating Kafka for async event-driven architecture
+- Building real-world automation & workflow tools
+- Collaborating across dev, ops, and product teams
+- Applying a “system thinking” lens to tech and business problems
 
-### Author
+📌 I’m currently exploring roles where I can blend technical depth with product thinking — especially in automation, internal tooling, or platform teams.
 
-Hitaishi N
+[Connect on LinkedIn](www.linkedin.com/in/hitaishi-n-grovista)
 
 
