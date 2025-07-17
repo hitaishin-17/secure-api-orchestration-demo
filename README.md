@@ -8,7 +8,7 @@ This is a Spring Boot demo application that showcases secure API orchestration u
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Java 17
 - Spring Boot 3.x
@@ -19,7 +19,7 @@ This is a Spring Boot demo application that showcases secure API orchestration u
 
 ---
 
-## 📦 Features
+## Features
 
 - User login to generate JWT token
 - Protected API endpoints with Bearer token authentication
@@ -29,7 +29,7 @@ This is a Spring Boot demo application that showcases secure API orchestration u
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 
@@ -52,9 +52,9 @@ Option A: Run from IntelliJ
 	•	Open project
 	•	Run SecureApiOrchestrationApp.java
 
-## 📡 API Endpoints
+## API Endpoints
 
-### 🔐 Authentication
+### Authentication
 
 | Method | Endpoint         | Description                       |
 |--------|------------------|-----------------------------------|
