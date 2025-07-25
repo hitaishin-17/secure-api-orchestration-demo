@@ -1,12 +1,29 @@
 # Secure API Orchestration Demo
 
-This is a Spring Boot demo application that showcases secure API orchestration using:
+This is a Spring Boot demo application that showcases secure customer API orchestration using:
 - JWT-based authentication
 - MongoDB for data persistence
 - Role-based access control
 - RESTful APIs for managing customer data
 
 ---
+## Why I Built This
+
+Modern backend platforms often struggle to balance security, event-driven scale, and developer clarity.
+
+I built this project to:
+	•	Create modular, secure APIs with JWT-based authentication
+	•	Demonstrate async event-driven workflows using Kafka
+	•	Provide dev teams with real-world patterns for API + orchestration logic
+
+⸻
+
+## Example User Story
+
+As a Platform Engineer,
+I want secure, token-authenticated APIs with async workflows,
+So I can manage customer data and trigger downstream events with minimal manual handling.
+
 
 ## Tech Stack
 
@@ -138,14 +155,13 @@ Feel free to fork, suggest improvements, or raise issues.
 
 ⸻
 ### About me
-Hi, I’m Hitaishi N, a backend engineer turned product-minded builder with experience in:
-- Designing secure, scalable APIs using Spring Boot & JWT
-- Integrating Kafka for async event-driven architecture
-- Building real-world automation & workflow tools
-- Collaborating across dev, ops, and product teams
-- Applying a “system thinking” lens to tech and business problems
+Hi, I’m Hitaishi N — a backend engineer turned product-minded builder focused on:
+	•	Secure API and platform architecture
+	•	Event-driven backend systems using Kafka
+	•	Workflow and automation tooling
+	•	Building with a “system thinking” mindset across tech and ops
 
-📌 I’m currently exploring roles where I can blend technical depth with product thinking — especially in automation, internal tooling, or platform teams.
+📌 I’m currently exploring roles where I can blend technical depth with product strategy — especially in internal tools, platform teams, or automation workflows.
 
 [Connect on LinkedIn](www.linkedin.com/in/hitaishi-n-grovista)
 
