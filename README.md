@@ -45,6 +45,8 @@ So I can manage customer data and trigger downstream events with minimal manual 
 - Swagger-based API documentation
 
 ---
+## Architecture Diagram
+![Architecture Diagram](docs/architecture_diagram.jpeg)
 
 ## Getting Started
 
