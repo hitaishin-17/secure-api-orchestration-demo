@@ -170,10 +170,10 @@ Feel free to fork, suggest improvements, or raise issues.
 ⸻
 ### About me
 Hi, I’m Hitaishi N — a backend engineer turned product-minded builder focused on:
-	•	Secure API and platform architecture
-	•	Event-driven backend systems using Kafka
-	•	Workflow and automation tooling
-	•	Building with a “system thinking” mindset across tech and ops
+- Secure API and platform architecture
+- Event-driven backend systems using Kafka
+- Workflow and automation tooling
+- Building with a “system thinking” mindset across tech and ops
 
 📌 I’m currently exploring roles where I can blend technical depth with product strategy — especially in internal tools, platform teams, or automation workflows.
 
