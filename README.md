@@ -1,88 +1,52 @@
 # Secure API Orchestration Demo
 
-This is a Spring Boot demo application that showcases secure customer API orchestration using:
-- JWT-based authentication
-- MongoDB for data persistence
-- Role-based access control
-- RESTful APIs for managing customer data
+This is a Spring Boot 3.x demo application that showcases secure, modular API orchestration using:
+	•	JWT-based authentication
+	•	MongoDB for data persistence
+	•	Kafka for asynchronous event-driven workflows
+	•	Role-based access control
+	•	Swagger UI for API visualization
+
+The project models a real-world orchestration pattern for secure customer management APIs, demonstrating how modern backend systems can balance security, asynchronicity, and developer clarity.
 
 ---
-## Why I Built This
+## Overview
 
-Modern backend platforms often struggle to balance security, event-driven scale, and developer clarity.
+The application demonstrates a production-style secure API orchestration system built with Spring Boot.
+It features JWT-secured endpoints, event-driven communication via Kafka, and role-based user access to simulate enterprise-grade workflows.
 
-I built this project to:
-- Create modular, secure APIs with JWT-based authentication
-- Demonstrate async event-driven workflows using Kafka
-- Provide dev teams with real-world patterns for API + orchestration logic
+Key Objectives:
+	•	Implement token-based authentication with JWT
+	•	Provide modular and extensible API orchestration logic
+	•	Showcase async event handling with Kafka producers and consumers
+	•	Enable quick API exploration through Swagger and Postman
 
 ⸻
-## Potential Impact & Use Case Metrics
-
-This project simulates a real-world secure API orchestration system with measurable backend and platform benefits:
-
-| Metric                             | Impact                                                                 |
-|-----------------------------------|------------------------------------------------------------------------|
-|  **Auth Success Rate**          | Secure JWT-based login flow eliminates unauthorized access to protected endpoints. |
-|  **API Response Time**           | Average response time under 100ms in local testing — simulates low-latency backend ops. |
-|  **Workflow Automation Coverage**| Kafka-based events replace 100+ manual follow-ups (e.g., CRM updates, audit logging). |
-|  **Developer Onboarding Time**  | Swagger UI + Postman collection enables <15 min onboarding for new devs. |
-|  **System Modularity**          | Designed for plug-and-play orchestration patterns in microservice environments. |
-
-
-## Example User Story
-
-As a Platform Engineer,
-I want secure, token-authenticated APIs with async workflows,
-So I can manage customer data and trigger downstream events with minimal manual handling.
-
+## Architecture Diagram
+![Architecture Diagram](docs/architecture_diagram.jpeg)
 
 ## Tech Stack
 
-- Java 17
-- Spring Boot 3.x
-- Spring Security
-- MongoDB
-- JWT (JJWT)
-- OpenAPI / Swagger UI
+|    Layer 	   |      Technology               |     Purpose    |
+|--------------|-------------------------------|----------------|
+| **Backend**  | Java 17, Spring Boot 3.x      | Core orchestration logic |
+| **Security** | Spring Security, JWT (JJWT)   | Authentication & authorization |
+| **Database** | MongoDB                       | Data persistence |
+| **Messaging** | Kafka                        | Event-driven workflows |
+| **API Docs** | OpenAPI / Swagger UI          | Interactive API documentation |
 
 ---
 
 ## Features
 
-- User login to generate JWT token
-- Protected API endpoints with Bearer token authentication
-- CRUD operations for customers
-- Status handling via enum
-- Swagger-based API documentation
+- Secure login to generate JWT tokens
+- Protected endpoints with Bearer token authentication
+- CRUD operations for Customer entities
+- Kafka-based event publication (customer.created)
+- Swagger UI integration for API discovery
+- Modular design for extensibility across microservices
 
 ---
-## Architecture Diagram
-![Architecture Diagram](docs/architecture_diagram.jpeg)
-
-## Getting Started
-
-### 1. Prerequisites
-
-- Java 17
-- Maven
-- MongoDB (running on `localhost:27017`)
-- (Optional) Docker & Docker Compose
-
----
-
-### 2. Clone the Repository
-
-```bash
-git clone https://github.com/hitaishin-17/secure-api-orchestration-demo.git
-cd secure-api-orchestration-demo
-
-### Setup & Run
-
-Option A: Run from IntelliJ
-	•	Open project
-	•	Run SecureApiOrchestrationApp.java
-
 ## API Endpoints
 
 ### Authentication
@@ -161,6 +125,29 @@ Ensure docker and docker-compose are installed and MongoDB container runs succes
 A ready-to-import Postman collection is available in the repo:
 secure-api-orchestration-demo.postman_collection.json
 
+## Getting Started
+
+### 1. Prerequisites
+
+- Java 17
+- Maven
+- MongoDB (running on `localhost:27017`)
+- (Optional) Docker & Docker Compose
+
+---
+
+### 2. Clone the Repository
+
+```bash
+git clone https://github.com/hitaishin-17/secure-api-orchestration-demo.git
+cd secure-api-orchestration-demo
+
+### Setup & Run
+
+Option A: Run from IntelliJ
+	•	Open project
+	•	Run SecureApiOrchestrationApp.java
+
 ⸻
 
 ### Contributing
@@ -168,14 +155,10 @@ secure-api-orchestration-demo.postman_collection.json
 Feel free to fork, suggest improvements, or raise issues.
 
 ⸻
-### About me
-Hi, I’m Hitaishi N — a backend engineer turned product-minded builder focused on:
-- Secure API and platform architecture
-- Event-driven backend systems using Kafka
-- Workflow and automation tooling
-- Building with a “system thinking” mindset across tech and ops
-
-📌 I’m currently exploring roles where I can blend technical depth with product strategy — especially in internal tools, platform teams, or automation workflows.
+### About This Build
+I’m Hitaishi N, a backend engineer focused on secure API architectures and event-driven system design.
+This demo models how to build production-grade orchestration logic with Spring Boot, JWT, and Kafka, while maintaining clean modularity and low-latency performance.
+The goal: to showcase how scalable and secure backend systems can be designed with clarity, reusability, and simplicity.
 
 [Connect on LinkedIn](www.linkedin.com/in/hitaishi-n-grovista)
 
